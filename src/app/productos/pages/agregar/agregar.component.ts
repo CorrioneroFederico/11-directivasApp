@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AgregarComponent {
 
-  texto1:string = 'Mensaje enviado desde AgregarComponent';
+  texto1:string = 'El campo debe ser obligatorio';
   color:string = 'red';
 
   public miFormulario: FormGroup = this.fb.group({

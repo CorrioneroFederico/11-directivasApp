@@ -6,18 +6,23 @@ import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 export class ErrorMsgDirective implements OnInit{
 
   private _color = 'red';
-  private _mensaje = 'Este mensaje si o si es obligatorio';
+  private _mensaje = 'Mensaje por defecto';
 
   elementRef: ElementRef<HTMLElement>;
 
-  @Input() set color(valor:string){
+  @Input() set color(valor: string){
     this._color = valor;
     this.setStyle();
   };
 
-  @Input() set mensaje(valor:string){
+  @Input() set mensaje(valor: string){
     this._mensaje = valor;
     this.setMensaje();
+  };
+
+  @Input() set valido(valor: boolean){
+    valor ? this.elementRef.nativeElement.classList.remove('CSSocultar'):
+            this.elementRef.nativeElement.classList.add('CSSocultar');
   };
 
 
